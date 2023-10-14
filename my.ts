@@ -1,18 +1,7 @@
-var animal= {
-    name: "pet",
-    sepices: "dog",
-    age:CalculateAge(2012),
-    speak:function(){
-        console.log('woof!');
-    }
 
-    
-}
-function CalculateAge(brithYear){
-    return Date.now() - brithYear;
-}
-function totalLength(x,y){
-    let total= x.length - y.length;
+
+function totalLength(x: (string | any[]),y:(string | any[])) :number
+{
+    var total: number= x.length - y.length;
     return total;
 }
-console.log(animal);
