@@ -1,25 +1,24 @@
-
-function fullname(x:String, y:string, c:string):string
-function fullname(x:string , y:string):string
-{
-    return x+" "+y;
+interface IPerson {
+    name:String,
+    family: string,
+    age: number,
+    email?:string
 }
+function register(person:IPerson){
 
-function totallength(x:string,y:string):number
-function totallength(x:any[],y:any[]):number
-function totallength(x: string | any[],y:string | any[])
-{
-    var total :number =x.length+y.length;
-    x.slice(0)
-    if (x instanceof Array){
+ console.log(person.name+" "+person.family)
 
-    }
-   if (x instanceof String){
-
-   }
-
-
-    return total;
 }
-totallength("fateme","mavandadi")
-totallength(["ali","hossein","reza"],["alizade","dehqan","mavandadi"])
+ var iman:IPerson= {
+    name : "fateme",
+    family: "mavandadi",
+    age: 23
+ }
+
+ register(iman);
+ interface IPersonservice{
+    add(person:IPerson):IPerson,
+    delete(person:IPerson):void,
+    getall():IPerson[],
+    getById(personId:number):IPerson,
+ }

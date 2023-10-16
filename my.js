@@ -1,14 +1,9 @@
-function fullname(x, y) {
-    return x + " " + y;
+function register(person) {
+    console.log(person.name + " " + person.family);
 }
-function totallength(x, y) {
-    var total = x.length + y.length;
-    x.slice(0);
-    if (x instanceof Array) {
-    }
-    if (x instanceof String) {
-    }
-    return total;
-}
-totallength("fateme", "mavandadi");
-totallength(["ali", "hossein", "reza"], ["alizade", "dehqan", "mavandadi"]);
+var iman = {
+    name: "fateme",
+    family: "mavandadi",
+    age: 23
+};
+register(iman);
