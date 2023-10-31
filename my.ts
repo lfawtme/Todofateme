@@ -1,51 +1,31 @@
-interface IPerson {
-    name:String,
-    family: string,
-    age: number,
-    gender: gender,
-    email?:string
+class Person{
+   static lastId=0;
+   constructor(name:string,family:string){
+ this.name=name;
+ this.family=family;
+   }
+  name: string;
+  family: string;
+  Fullname=function():string{
+   return this.name+' '+this.family;
+   
+  };
+  static getNextId(){
+   this.lastId+=1;
 }
-enum gender{
-   male=1,
-   female=2,
 }
 
-function register(person:IPerson){
- console.log(person.name+" "+person.family)
-
+function Register(Person: Person){
+   console.log(Person.name + ' '+Person.family)
 }
- var iman:IPerson= {
-    name : "fateme",
-    family: "mavandadi",
-    age: 23,
-    gender:gender.female,
- }
 
- register(iman);
- interface IPersonservice{
-    add(person:IPerson):IPerson,
-    delete(person:IPerson):void,
-    getall():IPerson[],
-    getById(personId:number):IPerson,
- }
- enum days{
-   shanbe,
-   yek ,
-   doshanbe,
-   seshanbe,
- }
- enum colors {
-   red= "#0cxxff",
-   green="#3xfccc"
- }
- console.log(colors.green)
+var person1 = new Person("fateme","mavandadi");
+console.log(person1.Fullname());
+console.log(Person.lastId);
+Person.getNextId();
 
- function SayHello (type: gender){
- if (type==gender.female){
-   console.log("hello female")
- }
-if (type===gender.male){
-   console.log("hello male")
-}
- }
- console.log(SayHello(gender.female))
+var person2 = new Person("abass","rezaei");
+console.log(person2.Fullname());
+console.log(Person.lastId);
+Person.getNextId();
+
